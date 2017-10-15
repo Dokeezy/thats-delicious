@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  .inner
+    h2 Edit Your Account
+    form(action="/account" method="POST" enctype="multipart/form-data")
+      label(for="name") Name
+      input(type="text" name="name" value=user.name)
+      label(for="photo") Photo
+      input(type="file" name="photo" id="photo" accept="image/gif, image/png, image/jpeg" value=user.photo)
+      label(for="email") Email Address
+      input(type="email" name="email" value=user.email)
+      input.button(type="submit" value="Update My Account")
